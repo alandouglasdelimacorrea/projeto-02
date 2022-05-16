@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, tap, map, empty, catchError } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { AppService } from '../app.service';
 import { Vagas } from '../vagas';
 
