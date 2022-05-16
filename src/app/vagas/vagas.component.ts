@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { map, Observable } from 'rxjs';
+import { Observable, tap, map, empty, catchError } from 'rxjs';
 import { AppService } from '../app.service';
 import { Vagas } from '../vagas';
 
@@ -10,15 +10,19 @@ import { Vagas } from '../vagas';
 })
 export class VagasComponent implements OnInit {
 
-  vagas$!: Observable<Vagas[]>;
+  vagas$!: Observable<Vagas[]>
 
   constructor(private service: AppService) { }
 
   ngOnInit(): void {
-    this.listarVagas()
-  }
-  listarVagas(){
-    this.vagas$ = this.service.getVagas()
+    this.listar()
   }
 
+  listar(){
+    this.vagas$ = this.service.getVagas().pipe(
+      map(result => result.registros)
+    )
+  }
+
+  
 }

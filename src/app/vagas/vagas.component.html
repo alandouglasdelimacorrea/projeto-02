@@ -1,44 +1,21 @@
-<!-- <div class="container">
-    <div class="row">
-        <div class="col-12 mb-2 card" *ngFor="let vaga of vagas$ | async" >
+<div class="container">
+    <div class="row" *ngFor="let vaga of vagas$ | async" >
+        <div class="col-12 mb-2 card">
             <div class="card-header">
-                <h5>{{ vaga.id_vagas }}</h5>
-            </div>
+                <h5>{{ vaga.titulo }}</h5>
+            </div>     
             <div class="card-body">
-                <span>{{ vaga.titulo }}</span>
-                <span>{{ vaga.salario }}</span>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <h5 class="card-title"> Salário: {{ vaga.salario }}</h5>
+                    </li>
+                    <li class="list-group-item">
+                        <p class="card-text"> {{ vaga.descricao }} </p>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
-</div> -->
-
-<!-- <div class="card">
-    <div class="card-header">
-        <h4>Vagas</h4>
-    </div>
-    <div class="card-body">
-        <table class="table table-hover">
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Nome</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let vaga of vagas$ | async">
-                    <td> {{ vaga.titulo }} </td>
-                    <td> {{ vaga.salario}} </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</div> -->
-
-<div *ngFor="let vaga of vagas$ | async" class="card cartao">
-    <div class="card-body">
-        <h5 class="card-title"> {{ vaga.id_vagas }} </h5>
-    </div>
-
 </div>
 
 
