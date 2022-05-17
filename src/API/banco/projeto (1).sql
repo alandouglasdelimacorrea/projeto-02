@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Tempo de geração: 28-Abr-2022 às 23:46
+-- Tempo de geração: 17-Maio-2022 às 15:06
 -- Versão do servidor: 8.0.28-0ubuntu0.20.04.3
 -- versão do PHP: 7.4.3
 
@@ -21,8 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `projeto`
 --
-CREATE DATABASE IF NOT EXISTS `projeto` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `projeto`;
 
 -- --------------------------------------------------------
 
@@ -35,6 +33,14 @@ CREATE TABLE `Empresas` (
   `nome` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
+--
+-- Extraindo dados da tabela `Empresas`
+--
+
+INSERT INTO `Empresas` (`id_empresas`, `nome`) VALUES
+(1, 'teste'),
+(2, 'teste');
+
 -- --------------------------------------------------------
 
 --
@@ -46,8 +52,15 @@ CREATE TABLE `Vagas` (
   `titulo` varchar(200) DEFAULT NULL,
   `salario` float DEFAULT NULL,
   `descricao` text,
-  `empresas_id_fk` int DEFAULT NULL
+  `empresas_id_fk` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+--
+-- Extraindo dados da tabela `Vagas`
+--
+
+INSERT INTO `Vagas` (`id_vagas`, `titulo`, `salario`, `descricao`, `empresas_id_fk`) VALUES
+(1, 'Testando', 2000, 'teste', 1);
 
 --
 -- Índices para tabelas despejadas
@@ -74,13 +87,13 @@ ALTER TABLE `Vagas`
 -- AUTO_INCREMENT de tabela `Empresas`
 --
 ALTER TABLE `Empresas`
-  MODIFY `id_empresas` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id_empresas` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `Vagas`
 --
 ALTER TABLE `Vagas`
-  MODIFY `id_vagas` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id_vagas` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Restrições para despejos de tabelas

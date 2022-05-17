@@ -1,0 +1,38 @@
+<nav class="navbar navbar-dark navbar-expand-lg bg-primary mb-3">
+    <div class="container-fluid">
+        <a class="navbar-brand">Empresas</a>
+    </div>
+</nav>
+
+<div class="container">
+    <button routerLink="/empresas" class="btn btn-outline-primary mb-3">
+        Empresas
+    </button>
+    <form class="needs-validation" novalidate [formGroup]="form">
+        <div class="form-row">
+            <div class="col-sm-5 mb-3">
+                <label for="nome">Nome da empresa</label>
+                <input type="text" class="form-control" id="nome" placeholder="Nome da empresa" formControlName="nome"
+                    [ngClass]="{ 'is-invalid': submmited && hasError('nome')}">
+            </div>
+        </div>
+    
+        <!-- <div class="form-row">
+            <div class="col-sm-5 mb-3">
+                <label for="id_empresas">Id da empresa</label>
+                <input type="number" class="form-control" id="id_empresas" placeholder="Id da empresa"
+                    formControlName="id_empresas" [ngClass]="{ 'is-invalid': submmited && hasError('id_empresas')}">
+            </div>
+        </div> -->
+    
+        <div class="mt-3">
+            <button type="submit" class="btn btn-outline-primary" (click)="onSubmit()">
+                Salvar
+            </button>
+            <button type="button" class="btn btn-default" (click)="onCancel()">
+                Limpar
+            </button>
+        </div>
+    
+    </form>
+</div>

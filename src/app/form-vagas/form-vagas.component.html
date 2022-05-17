@@ -1,0 +1,62 @@
+<nav class="navbar navbar-dark navbar-expand-lg bg-primary mb-3">
+    <div class="container-fluid">
+        <a class="navbar-brand">Vagas</a>
+    </div>
+</nav>
+
+<div class="container">
+    <button routerLink="/" class="btn btn-outline-primary mb-3">
+        Vagas
+    </button>
+    <form class="needs-validation" novalidate [formGroup]="form">
+        <div class="form-row">
+            <div class="col-sm-5 mb-3">
+                <label for="id_vagas">Id da vaga</label>
+                <input type="number" class="form-control" id="id_vagas" placeholder="Id da vaga" formControlName="id_vagas"
+                    [ngClass]="{ 'is-invalid': submmited && hasError('id_vagas')}">
+            </div>
+        </div>
+    
+        <div class="form-row">
+            <div class="col-sm-5 mb-3">
+                <label for="titulo">Titulo</label>
+                <input type="text" class="form-control" id="titulo" placeholder="Titulo"
+                    formControlName="titulo" [ngClass]="{ 'is-invalid': submmited && hasError('titulo')}">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="col-sm-5 mb-3">
+                <label for="salario">Salario</label>
+                <input type="text" class="form-control" id="salario" placeholder="salario"
+                    formControlName="salario" [ngClass]="{ 'is-invalid': submmited && hasError('salario')}">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="col-sm-5 mb-3">
+                <label for="descricao">descricao</label>
+                <input type="text" class="form-control" id="descricao" placeholder="descricao"
+                    formControlName="descricao" [ngClass]="{ 'is-invalid': submmited && hasError('descricao')}">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="col-sm-5 mb-3">
+                <label for="empresas_id">Id das empresas</label>
+                <input type="number" class="form-control" id="empresas_id" placeholder="id da empresa"
+                    formControlName="empresas_id" [ngClass]="{ 'is-invalid': submmited && hasError('empresas_id')}">
+            </div>
+        </div>
+    
+        <div class="mt-3">
+            <button type="submit" class="btn btn-outline-primary" (click)="onSubmit()">
+                Salvar
+            </button>
+            <button type="button" class="btn btn-default" (click)="onCancel()">
+                Limpar
+            </button>
+        </div>
+    
+    </form>
+</div>

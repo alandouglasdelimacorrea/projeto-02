@@ -1,4 +1,18 @@
+<nav class="navbar navbar-dark navbar-expand-lg bg-primary mb-3">
+    <div class="container-fluid">
+      <a class="navbar-brand">Vagas</a>
+    </div>
+</nav>
+
 <div class="container">
+    <div>
+        <button routerLink="/empresas" class="btn btn-outline-primary m-2">
+            Empresas
+        </button>
+        <button routerLink="/novo_vaga" class="btn btn-outline-primary m-2">
+            Adicionar uma vaga 
+        </button>
+    </div>
     <div class="row" *ngFor="let vaga of vagas$ | async" >
         <div class="col-12 mb-2 card">
             <div class="card-header">
@@ -13,6 +27,18 @@
                         <p class="card-text"> {{ vaga.descricao }} </p>
                     </li>
                 </ul>
+                <!-- <ul class="list-group">
+                    <li class="list-group-item">
+                        <span class="float-right">
+                            <button class="btn btn-warning mb-1 btn-sm" (click)="onEdit(vaga.id_vagas)">
+                                Editar
+                            </button>
+                            <button class="btn btn-danger mb-1 btn-sm">
+                                Excluir
+                            </button>
+                        </span>
+                    </li>
+                </ul> -->
             </div>
         </div>
     </div>

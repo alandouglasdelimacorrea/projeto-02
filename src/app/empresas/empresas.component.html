@@ -1,1 +1,31 @@
+<nav class="navbar navbar-dark navbar-expand-lg bg-primary mb-3">
+    <div class="container-fluid">
+      <a class="navbar-brand">Empresas</a>
+    </div>
+</nav>
 
+<div class="container">
+    <div>
+        <button routerLink="/" class="btn btn-outline-primary m-2">
+            Vagas
+        </button>
+        <button routerLink="/novo" class="btn btn-outline-primary m-2">
+            Adicionar uma empresa
+        </button>
+    </div>
+    
+    <div class="row" *ngFor="let empresa of empresas$ | async" >
+        <div class="col-12 mb-2 card">
+            <div class="card-header">
+                <h5>{{ empresa.nome }}</h5>  
+            </div>     
+            <div class="card-body">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <h5 class="card-title"> Id da empresa: {{ empresa.id_empresas }}</h5>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
